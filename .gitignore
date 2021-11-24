@@ -1,0 +1,7 @@
+bin/
+obj/
+main.o
+TP_librerias.o
+TP1_con_librerias.depend
+TP1_con_librerias.layout
+TP1_con_librerias.cbp
