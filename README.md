@@ -1,4 +1,6 @@
-UTN_TP1_calculadora en C
+UTN_TP1_calculadoraenC
+
+Calculadora en C.
 
 El programa iniciará y contará con un menú de opciones:
 
