@@ -1,4 +1,14 @@
-#include "TP_librerias.h"
+#include "TP_librerias.h"2
+int sumar(int a, int b);
+float sumardecimeles(float a, float b);
+int restar(int a,int b);
+float restardecimeles(float a,float b);
+int multiplicar(int a, int b);
+float multiplicardecimales(float a, float b);
+int dividir(int a, int b);
+float dividirdecimales(float a, float b);
+int factorial(int f);
+float factorialdecimal(float f);
 
 void menuPrincipal(){
 
@@ -216,151 +226,178 @@ int opcionSumaEnteros(){
 
     int a;
     int b;
+    int r;
      printf("Ingrese un numero entero: \n");
         printf("Numero A:");
-        scanf(" %d ",&a);
+        scanf("%d",&a);
         printf("Numero B:");
-        scanf(" %d ",&b);
-        printf(" %d + %d = %d",a,b,a+b);
+        scanf("%d",&b);
+        r=sumar(a,b);
+        printf(" %d + %d = %d",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionSumaDecimales(){
+float opcionSumaDecimales(){
 
-    float Da;
-    float Db;
-        printf("Ingrese un numero Decimal: ");
+    float a;
+    float b;
+    float r;
+        printf("Ingrese un numero Decimal: \n");
         printf("Numero A: ");
-        scanf(" %f ",&Da);
+        scanf("%f",&a);
         printf("Numero B: ");
-        scanf(" %f ",&Db);
-        printf(" %.2f + %.2f = %.2f",Da,Db,Da+Db);
+        scanf("%f",&b);
+        r=sumardecimeles(a,b);
+        printf(" %.2f + %.2f = %.2f ",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionRestaEnteros(){
+int opcionRestaEnteros(){
 
-    int Ea;
-    int Eb;
-        printf("Ingrese un numero entero: ");
+    int a;
+    int b;
+    int r;
+        printf("Ingrese un numero entero: \n");
         printf("Numero A: ");
-        scanf(" %d ",&Ea);
+        scanf("%d",&a);
         printf("Numero B: ");
-        scanf(" %d ",&Eb);
-        printf(" %d - %d = %d",Ea,Eb,Ea-Eb);
+        scanf("%d",&b);
+        r=restar(a,b);
+        printf(" %d - %d = %d",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionRestaDecimales(){
+float opcionRestaDecimales(){
 
-    float Da;
-    float Db;
+    float a;
+    float b;
+    float r;
         printf("Resta de Decimales ");
-        printf("Ingrese un numero Decimal: ");
+        printf("Ingrese un numero Decimal: \n");
         printf("Numero A: ");
-        scanf(" %f ",&Da);
+        scanf("%f",&a);
         printf("Numero B: ");
-        scanf(" %f ",&Db);
-        printf(" %.2f - %.2f = %.2f ",Da,Db,Da-Db);
+        scanf("%f",&b);
+        r=restardecimeles(a,b);
+        printf(" %.2f - %.2f = %.2f ",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionMultiplicacionEnteros(){
+int opcionMultiplicacionEnteros(){
 
-    int Ea;
-    int Eb;
-        printf("Ingrese un numero entero: ");
+    int a;
+    int b;
+    int r;
+        printf("Ingrese un numero entero: \n");
         printf("Numero A: ");
-        scanf(" %d ",&Ea);
+        scanf("%d",&a);
         fflush(stdin);
         printf("Numero B: ");
-        scanf(" %d ",&Eb);
-        printf(" %d * %d = %d",Ea,Eb,Ea*Eb);
+        scanf("%d",&b);
+        r=multiplicar(a,b);
+        printf(" %d * %d = %d",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 
 }
-void opcionMultiplicacionDecimales(){
-    float Da;
-    float Db;
-        printf("Ingrese un numero Decimal: ");
+float opcionMultiplicacionDecimales(){
+    float a;
+    float b;
+    float r;
+        printf("Ingrese un numero Decimal: \n");
         printf("Numero A: ");
-        scanf(" %f ",&Da);
+        scanf("%f",&a);
         printf("Numero B: ");
-        scanf(" %f ",&Db);
-        printf(" %.2f * %.2f = %.2f",Da,Db,Da*Db);
+        scanf("%f",&b);
+        r=multiplicardecimales(a,b);
+        printf(" %.2f * %.2f = %.2f",a,b,r);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionDivisionEnteros(){
-    int Ea;
-    int Eb;
-        printf("Ingrese un numero entero: ");
+int opcionDivisionEnteros(){
+    int a;
+    int b;
+    int r;
+    do{
+        printf("Ingrese un numero entero: \n");
         printf("Numero A: ");
-        scanf(" %d ",&Ea);
+        scanf("%d",&a);
         printf("Numero B: ");
-        scanf(" %d ",&Eb);
-
-    if(Eb==0){
-        printf("No se puede Dividir por cero");
+        scanf("%d",&b);
+    if(b==0){
+        printf("No se puede Dividir por cero,ingrese otro numero.\n");
+        fflush(stdin);
         }
     else{
-        printf("Resultado %d / %d = %d",Ea,Eb,Ea/Eb);
+        r=dividir(a,b);
+        printf("Resultado %d / %d = %d",a,b,r);
         }
+    }while(b==0);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionDivisionDecimales(){
-    float Da;
-    float Db;
-        printf("Ingrese un numero Decimal: ");
+float opcionDivisionDecimales(){
+    float a;
+    float b;
+    float r;
+do{
+        printf("Ingrese un numero Decimal: \n");
         printf("Numero A: ");
-        scanf(" %f ",&Da);
+        scanf("%f",&a);
         printf("Numero B: ");
-        scanf(" %f ",&Db);
-    if(Db==0){
-        printf("No se puede Dividir por cero");
-    }
-    else{
-        printf("Resultado %.2f / %.2f = %.2f",Da,Db,Da/Db);
-    }
+        scanf("%f",&b);
+        if(b==0){
+        printf("No se puede Dividir por cero,ingrese otr numero\n");
+            }
+        else{
+        r=dividirdecimales(a,b);
+        printf("Resultado %.2f / %.2f = %.2f",a,b,r);
+            }
+}while(b==0);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
-void opcionFactorialEnteros(){
-    int Ea;
+int opcionFactorialEnteros(){
+    int a;
     int resultado;
-        printf("Ingrese un numero Entero: ");
-        printf("Un Numero: ");
-        scanf(" %d ",&Ea);
-        int n=Ea;
-        if(n==1)
-        return 1;
-        resultado=n*(n-1);
-        printf("\nEl factorial de %d es %d",Ea,resultado);
+    do{
+        printf("Ingrese un numero Entero: \n");
+        printf("\nValor:");
+        scanf("%d",&a);
+        if(a<=0){
+        printf("Numero no valido, ingrese un numero natural mayor a cero. \n");
+        }else{
+        resultado=factorial(a);
+        printf("\nEl factorial de %d es %d\n",a,resultado);
+        getch();
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
+        }
+      }while(a<=0);
 }
-void opcionFactorialDecimales(){
-    float Da;
+float opcionFactorialDecimales(){
+    float a;
     float resultado;
-        printf("Ingrese un numero Decimal: ");
-        printf("Un Numero: ");
-        scanf(" %f ",&Da);
-        int n=Da;
-        if(n==1)
-        return 1;
-        resultado=n*(n-1);
-        printf("\nEl factorial de %.2f es %.2d ",Da,resultado);
+    do{
+        printf("Ingrese un numero Decimal: \n");
+        scanf("%f",&a);
+      if(a<=0){
+        printf("Numero no valido, ingrese un numero natural mayor a cero. \n");
+      }else{
+        resultado=factorialdecimal(a);
+        printf("\nEl factorial de %.2f es %.2f \n",a,resultado);
+        }
+     }while(a<=0);
+        getch();
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -684,7 +721,7 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
       system("mode con: cols=120 lines=30");
       cordenadas_xy(40, 7 + seleccion);
       printf("==>");
-      // Imprime el título del menú
+      // Imprime el tÃ­tulo del menÃº
 
       cordenadas_xy(43,2);
       printf("%s",titulo);
@@ -701,7 +738,7 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
 
       int i = 0;
 
-      // Imprime las opciones del menú
+      // Imprime las opciones del menÃº
       for (; i < NumOpciones; ++i) {
          cordenadas_xy(45, 8 + i);
          printf(" %d - %s",(i + 1),opciones[i]);
@@ -745,4 +782,58 @@ COORD cordenadas;
 cordenadas.X = x;/**Asociacion de objeto a los nombres que se dio en la funcion*/
 cordenadas.Y = y;
 SetConsoleCursorPosition(ventana,cordenadas);/**Posiciona cursor en las cordenadas*/
+}
+int sumar(int a, int b){
+    int total;
+    total=a+b;
+    return total;
+}
+float sumardecimeles(float a, float b){
+    float total;
+    total=a+b;
+    return total;
+}
+int restar(int a, int b){
+    int total;
+    total=a-b;
+    return total;
+}
+float restardecimeles(float a,float b){
+    float total;
+    total=a-b;
+    return total;
+}
+int multiplicar(int a, int b){
+    int total;
+    total=a*b;
+    return total;
+}
+float multiplicardecimales(float a, float b){
+    float total;
+    total=a*b;
+    return total;
+}
+int dividir(int a, int b){
+    int total;
+    total=a/b;
+    return total;
+}
+float dividirdecimales(float a, float b){
+    int total;
+    total=a/b;
+    return total;
+}
+int factorial(int n){
+   int resp;
+        if(n==1)
+            return 1;
+            resp=n* factorial(n-1);
+            return (resp);
+}
+float factorialdecimal(float n){
+    float resp;
+        if(n==1)
+            return 1;
+            resp=n* factorial(n-1);
+        return (resp);
 }
