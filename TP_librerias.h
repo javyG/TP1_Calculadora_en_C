@@ -16,25 +16,19 @@ void ayudaPrincipal();
 void acerca_de();
 
 int opcionSumaEnteros(); //submenu suma
-void opcionSumaDecimales();
+float opcionSumaDecimales();
 
-void opcionRestaEnteros();//submenu resta
-void opcionRestaDecimales();
+int opcionRestaEnteros();//submenu resta
+float opcionRestaDecimales();
 
-void opcionMultiplicacionEnteros();//submenu multiplicacion
-void opcionMultiplicacionDecimales();
+int opcionMultiplicacionEnteros();//submenu multiplicacion
+float opcionMultiplicacionDecimales();
 
-void opcionDivisionEnteros();//submenu division
-void opcionDivisionDecimales();
+int opcionDivisionEnteros();//submenu division
+float opcionDivisionDecimales();
 
-void ayudaSuma();
-void ayudaResta();
-void ayudaMultiplicacion(); //funciones de ayuda
-void ayudaDivision();
-void ayudaFactorial();
-void ayudaConfiguracion();
-void ayudaColor();
-
+int opcionFactorialEnteros();
+float opcionFactorialDecimales();
 //void modificaAspecto();
 void modificaColorFondo();
 void modificaColorTexto();
