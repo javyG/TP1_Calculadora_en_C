@@ -11,6 +11,7 @@ void menuResta();
 void menuMultiplicacion(); //menu principal
 void menuDivision();
 void menuFactorial();
+void menuCalcularTodos();
 void menuConfiguracion();
 void ayudaPrincipal();
 void acerca_de();
@@ -29,6 +30,7 @@ float opcionDivisionDecimales();
 
 int opcionFactorialEnteros();
 float opcionFactorialDecimales();
+
 //void modificaAspecto();
 void modificaColorFondo();
 void modificaColorTexto();
