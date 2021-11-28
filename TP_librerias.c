@@ -1,23 +1,27 @@
-#include "TP_librerias.h"2
+#include "TP_librerias.h"2//
 int sumar(int a, int b);
-float sumardecimeles(float a, float b);
+float sumardecimales(float a, float b);
 int restar(int a,int b);
-float restardecimeles(float a,float b);
+float restardecimales(float a,float b);
 int multiplicar(int a, int b);
 float multiplicardecimales(float a, float b);
 int dividir(int a, int b);
 float dividirdecimales(float a, float b);
 int factorial(int f);
 float factorialdecimal(float f);
+int calcularTodosEnteros();
+float calcularTodosDecimales();
+void generadorDeMarcos(int x1,int y1,int x2,int y2);
+
 
 void menuPrincipal(){
 
     int Salir=1;
     int opcion;
-    char *titulo="Menu Principal";
-    char *opciones[]={"Sumar","Restar","Multiplicar","Dividir","Factorial",
-    "Ayuda","Configuracion","Acerca de","Salir"};
-    int NumOpciones=9;
+    char  *titulo="Menu Principal";
+    char  *opciones[]={"Sumar","Restar","Multiplicar","Dividir","Factorial","Realizar todos los calculos",
+    "Configuracion","Ayuda","Acerca de","Salir"};
+    int NumOpciones=10;
       do{
             opcion =menu(titulo,opciones,NumOpciones);
 
@@ -45,7 +49,7 @@ void menuPrincipal(){
             break;
         case 6:
             system("cls");
-            ayudaPrincipal();
+            menuCalcularTodos();
             break;
         case 7:
             system("cls");
@@ -53,10 +57,34 @@ void menuPrincipal(){
             break;
         case 8:
             system("cls");
+            ayudaPrincipal();
+            break;
+
+        case 9:
+            system("cls");
             acerca_de();
             break;
-        case 9:
+
+        case 10:
             Salir=0;
+            int delay = 0;
+            for(delay=0; delay<10; delay++){
+                Sleep(200);
+                system("cls");
+                cordenadas_xy(43,12);
+            printf("El programa terminara en 10 segundos...");
+            }
+            for(delay=0; delay<10; delay++){
+                Sleep(1000);
+                system("cls");
+                cordenadas_xy(43,12);
+                printf("El programa terminara en: %i...", delay+1);
+            }
+            system("cls");
+            cordenadas_xy(45,12);
+            printf("Gracias por Utilizar Calculadora!!!");
+            cordenadas_xy(45,15);
+            system("pause=nul");
             system("cls");
             system("exit");
             break;
@@ -224,17 +252,26 @@ void menuFactorial(){
 }
 int opcionSumaEnteros(){
 
-    int a;
-    int b;
-    int r;
-     printf("Ingrese un numero entero: \n");
+  int a,b,r;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Suma de Enteros ");
+        cordenadas_xy(45,8);
+        printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,9);
         printf("Numero A:");
         scanf("%d",&a);
+        cordenadas_xy(45,10);
         printf("Numero B:");
         scanf("%d",&b);
         r=sumar(a,b);
-        printf(" %d + %d = %d",a,b,r);
-        printf("\nPara Volver al menu presione enter");
+        cordenadas_xy(45,12);
+        printf("Suma: %d + %d = %d",a,b,r);
+        cordenadas_xy(45,24);
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -243,14 +280,25 @@ float opcionSumaDecimales(){
     float a;
     float b;
     float r;
-        printf("Ingrese un numero Decimal: \n");
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Suma de Decimales ");
+        cordenadas_xy(45,8);
+        printf("Ingrese un numero Decimal: ");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%f",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%f",&b);
-        r=sumardecimeles(a,b);
+        r=sumardecimales(a,b);
+        cordenadas_xy(45,12);
         printf(" %.2f + %.2f = %.2f ",a,b,r);
-        printf("\nPara Volver al menu presione enter");
+        cordenadas_xy(45,24);
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -259,13 +307,24 @@ int opcionRestaEnteros(){
     int a;
     int b;
     int r;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Resta de Enteros ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%d",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%d",&b);
         r=restar(a,b);
+        cordenadas_xy(45,12);
         printf(" %d - %d = %d",a,b,r);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -275,14 +334,24 @@ float opcionRestaDecimales(){
     float a;
     float b;
     float r;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
         printf("Resta de Decimales ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero Decimal: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%f",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%f",&b);
-        r=restardecimeles(a,b);
+        r=restardecimales(a,b);
+        cordenadas_xy(45,12);
         printf(" %.2f - %.2f = %.2f ",a,b,r);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -292,14 +361,24 @@ int opcionMultiplicacionEnteros(){
     int a;
     int b;
     int r;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Multiplicacion de Enteros ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%d",&a);
-        fflush(stdin);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%d",&b);
         r=multiplicar(a,b);
+        cordenadas_xy(45,12);
         printf(" %d * %d = %d",a,b,r);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -309,13 +388,24 @@ float opcionMultiplicacionDecimales(){
     float a;
     float b;
     float r;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Multiplicacion de Decimales");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero Decimal: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%f",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%f",&b);
         r=multiplicardecimales(a,b);
+        cordenadas_xy(45,12);
         printf(" %.2f * %.2f = %.2f",a,b,r);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -325,20 +415,32 @@ int opcionDivisionEnteros(){
     int b;
     int r;
     do{
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Division de Enteros ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%d",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%d",&b);
     if(b==0){
+        cordenadas_xy(45,22);
         printf("No se puede Dividir por cero,ingrese otro numero.\n");
         fflush(stdin);
         }
     else{
         r=dividir(a,b);
+        cordenadas_xy(45,12);
         printf("Resultado %d / %d = %d",a,b,r);
         }
     }while(b==0);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
@@ -348,37 +450,61 @@ float opcionDivisionDecimales(){
     float b;
     float r;
 do{
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Division de Decimales ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero Decimal: \n");
+        cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%f",&a);
+        cordenadas_xy(45,10);
         printf("Numero B: ");
         scanf("%f",&b);
         if(b==0){
+        cordenadas_xy(45,22);
         printf("No se puede Dividir por cero,ingrese otr numero\n");
             }
         else{
         r=dividirdecimales(a,b);
+        cordenadas_xy(45,12);
         printf("Resultado %.2f / %.2f = %.2f",a,b,r);
             }
 }while(b==0);
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
 int opcionFactorialEnteros(){
     int a;
-    int resultado;
+    long long int resultado;
     do{
+
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Factorial con Enteros ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero Entero: \n");
-        printf("\nValor:");
+        cordenadas_xy(45,9);
+        printf("Valor:");
         scanf("%d",&a);
         if(a<=0){
+        cordenadas_xy(45,22);
         printf("Numero no valido, ingrese un numero natural mayor a cero. \n");
         }else{
         resultado=factorial(a);
-        printf("\nEl factorial de %d es %d\n",a,resultado);
+        cordenadas_xy(45,10);
+        printf("El factorial de %d es %d\n",a,resultado);
         getch();
-        printf("\nPara Volver al menu presione enter");
+        cordenadas_xy(45,24);
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
         }
@@ -388,17 +514,162 @@ float opcionFactorialDecimales(){
     float a;
     float resultado;
     do{
+
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,21);
+        generadorDeMarcos(1,22,117,28);
+        cordenadas_xy(45,3);
+        printf("Factorial con Decimales ");
+        cordenadas_xy(45,8);
         printf("Ingrese un numero Decimal: \n");
+        cordenadas_xy(45,9);
+        printf("\nValor:");
         scanf("%f",&a);
       if(a<=0){
+        cordenadas_xy(45,22);
         printf("Numero no valido, ingrese un numero natural mayor a cero. \n");
       }else{
         resultado=factorialdecimal(a);
+        cordenadas_xy(45,10);
         printf("\nEl factorial de %.2f es %.2f \n",a,resultado);
         }
      }while(a<=0);
         getch();
+        cordenadas_xy(45,24);
         printf("\nPara Volver al menu presione enter");
+        system("pause>nul");
+        system("cls");
+}
+void menuCalcularTodos(){
+
+    int Salir=1;
+    int opcion;
+    char *titulo="Menu Resta";
+    char *opciones[]={"Calcular Todos en numeros Enteros","Calcular Todos en numeros Decimales",
+              "Ayuda","Atras"};
+    int NumOpciones=4;
+      do{
+        opcion = menu(titulo,opciones,NumOpciones);
+
+     switch(opcion){
+
+        case 1:
+            system("cls");
+            calcularTodosEnteros();
+            break;
+        case 2:
+            system("cls");
+            calcularTodosDecimales();
+            break;
+        case 3:
+            system("cls");
+            ayudaCalcularTodos();
+            break;
+        case 4:
+            Salir=0;
+            break;
+        }
+    }
+    while(Salir);
+}
+
+int calcularTodosEnteros(){
+
+    int a;
+    int b;
+    int r;
+    long long int resultado;
+        generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,9);
+        generadorDeMarcos(1,10,117,27);
+        generadorDeMarcos(1,18,117,28);
+        cordenadas_xy(45,3);
+        printf("Calcular Todas las Operacines con Enteros ");
+        cordenadas_xy(45,8);
+        printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,11);
+        printf("Numero A:");
+        scanf("%d",&a);
+        cordenadas_xy(45,12);
+        printf("Numero B:");
+        scanf("%d",&b);
+        cordenadas_xy(45,13);
+        printf("Suma: %d + %d = %d\n",a,b,sumar(a,b));
+        cordenadas_xy(45,14);
+        printf("Resta: %d - %d = %d\n",a,b,restar(a,b));
+        cordenadas_xy(45,15);
+        printf("Multiplicacion: %d * %d = %d\n",a,b,multiplicar(a,b));
+      if(b==0){
+        cordenadas_xy(45,19);
+        printf("No se puede Dividir por cero,ingrese otro numero.\n");
+        }
+    else{
+        r=dividir(a,b);
+        cordenadas_xy(45,16);
+        printf("Division %d / %d = %d\n",a,b,r);
+        }
+      if(a<=0){
+        cordenadas_xy(45,20);
+        printf("Numero no valido, ingrese un numero mayor a cero. ");
+   }else{
+        resultado=factorialdecimal(a);
+        cordenadas_xy(45,17);
+        printf("El factorial de %d es %d \n",a,resultado);
+        }
+        cordenadas_xy(45,24);
+        printf("Para Volver al menu presione enter");
+        system("pause>nul");
+        system("cls");
+}
+float calcularTodosDecimales(){
+
+    float a;
+    float b;
+    float r;
+    float resultado;
+     generadorDeMarcos(0,0,118,28);
+        generadorDeMarcos(1,1,117,5);
+        generadorDeMarcos(1,6,117,9);
+        generadorDeMarcos(1,10,117,27);
+        generadorDeMarcos(1,18,117,28);
+        cordenadas_xy(45,3);
+        printf("Calcular Todas las Operacines con Decimales ");
+        cordenadas_xy(45,8);
+        printf("Ingrese un numero entero: \n");
+        cordenadas_xy(45,11);
+        printf("Numero A:");
+        scanf("%f",&a);
+        cordenadas_xy(45,12);
+        printf("Numero B:");
+        scanf("%f",&b);
+        factorialdecimal(a);
+        cordenadas_xy(45,13);
+        printf("Suma: %.2f + %.2f = %.2f \n",a,b,sumardecimales(a,b));
+        cordenadas_xy(45,14);
+        printf("Resta: %.2f - %.2f = %.2f \n",a,b,restardecimales(a,b));
+        cordenadas_xy(45,15);
+        printf("Multiplicacion: %.2f * %.2f = %.2f\n",a,b,multiplicardecimales(a,b));
+        if(b==0){
+        cordenadas_xy(45,19);
+        printf("No se puede Dividir por cero,ingrese otro numero.\n");
+        }
+    else{
+        r=dividirdecimales(a,b);
+        cordenadas_xy(45,16);
+        printf("Division: %.2f / %.2f = %.2f\n",a,b,r);
+        }
+      if(a<=0){
+        cordenadas_xy(45,20);
+        printf("Numero no valido, ingrese un numero mayor a cero. \n");
+    }else{
+        resultado=factorialdecimal(a);
+        cordenadas_xy(45,17);
+        printf("El factorial de %.2f es %.2f ",a,resultado);
+        }
+        cordenadas_xy(45,24);
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -407,7 +678,7 @@ void menuConfiguracion(){
     int Salir=1;
     int opcion;
     char *titulo="Menu Configuracion";
-    char *opciones[]={"Modificar Color de Fondo","Modificar Color de Texto",
+    char *opciones[]={"Cambiar Tema","Cambiar Color de Texto",
               "Ayuda","Atras"};
     int NumOpciones=4;
       do{
@@ -433,34 +704,7 @@ void menuConfiguracion(){
     }
     while(Salir);
 }
-void acerca_de(){
 
-    printf("Aca van los atributos, integrantes\n",
-    "datos relevantes del programa, version y\n",
-    "datos del TP...");
-     printf("\nPara Volver al menu presione enter");
-     system("pause>nul");
-     system("cls");
-}
-void ayudaPrincipal(){
-
-     cordenadas_xy(50,3);
-     printf("Ayuda de Menu Principal\n");
-     cordenadas_xy(0,5);
-     printf("________________________________________________________________________________________________________________________");
-     cordenadas_xy(5,8);
-     printf("Utilice el cursor del teckado ARRIBA O ABAJO para navegar por el menu, para seleccionar la opcion presione ENTER.\n ");
-     cordenadas_xy(0,26);
-     printf("________________________________________________________________________________________________________________________");
-     cordenadas_xy(20,30);
-     printf("\nPara Volver al menu presione enter");
-     system("pause>nul");
-     system("cls");
-}
-/**void modificaAspecto(){
-
-    printf("Aca va la configuracion de menu");
-}*/
 void modificaColorFondo(){
 int Salir=1;
     int opcion;
@@ -476,72 +720,80 @@ int Salir=1;
         case 1:
             system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 0E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 2:
             system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 1E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 3:
             system("cls");
             if(aceptar=13)
-            system("color 2E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            generadorDeMarcos(35,13,85,17);
+            system("color 2f");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 4:
            system("cls");
             if(aceptar=13)
-            system("color 3E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            generadorDeMarcos(35,13,85,17);
+            system("color 3f");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 5:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 4E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 6:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 5E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 7:
            system("cls");
             if(aceptar=13)
-            system("color 6E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            generadorDeMarcos(35,13,85,17);
+            system("color 6f");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 8:
             system("cls");
-            if(aceptar=115)
-            system("color 79");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
+            system("color 7D");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
@@ -560,7 +812,7 @@ void modificaColorTexto(){
 int Salir=1;
     int opcion;
     char *titulo="Modificaion de Colores de Fondo";
-    char *opciones[]={"Color Gris","Color Azul","Color Verde","Color Aguamarina","Color Rojo","Color Rojo","Color Purpura","Color Amarillo","Color Blanco","Ayuda","Atras"};
+    char *opciones[]={"Color Gris","Color Azul","Color Verde","Color Aguamarina","Color Rojo","Color Purpura","Color Amarillo","Color Blanco","Ayuda","Atras"};
     int NumOpciones=10;
       do{
         opcion = menu(titulo,opciones,NumOpciones);
@@ -570,72 +822,80 @@ int Salir=1;
         case 1:
             system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 8");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 2:
             system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color 9");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 3:
             system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color A");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 4:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color B");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 5:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color C");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 6:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color D");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 7:
            system("cls");
             if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color E");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
         case 8:
             system("cls");
-            if(aceptar=115)
+            if(aceptar=13)
+            generadorDeMarcos(35,13,85,17);
             system("color F");
-            printf("Presione 'Enter' para cambiar el Color",'\n');
-            printf("\nVuelva a presionar Enter para Volver al Menu");
+            cordenadas_xy(39,15);
+            printf("Vuelva a presionar Enter para Volver al Menu");
             system("pause>nul");
             system("cls");
             break;
@@ -650,17 +910,119 @@ int Salir=1;
     }
     while(Salir);
 }
-/** modificaCuadroDeVentana(){
+void acerca_de(){
 
-    printf("Aca va la configuracion de cuadro de ventana");
-    printf("\nPara Volver al menu presione enter");
-    system("pause>nul");
-    system("cls");
-}*/
+     generadorDeMarcos(0,0,118,29);
+     generadorDeMarcos(1,1,117,5);
+     generadorDeMarcos(1,6,117,23);
+     generadorDeMarcos(1,24,117,28);
+     cordenadas_xy(50,3);
+     printf("Acerca de Calculadora");
+     cordenadas_xy(50,8);
+     printf("Nombre; Programa Calculadora");
+     cordenadas_xy(50,9);
+     printf(" CUDi -(UTNFRA) ");
+     cordenadas_xy(50,10);
+     printf("Materia Progrmacion 1");
+     cordenadas_xy(50,11);
+     printf("PROFESOR: Miguel Miño");
+     cordenadas_xy(50,12);
+     printf("Trabajo Practico: Numero 1");
+     cordenadas_xy(50,13);
+     printf("GRUPO 11 - INTEGRANTES");
+     cordenadas_xy(50,14);
+     printf("Eliana Arias");
+     cordenadas_xy(50,15);
+     printf("MAIL: eli15martinez22@gmail.com");
+     cordenadas_xy(50,16);
+     printf("Daiana Solange Meaurio");
+     cordenadas_xy(50,17);
+     printf("MAIL: solmds8@gmail.com");
+     printf("Gerardo Garcia");
+     cordenadas_xy(50,18);
+     printf("MAIL: ggeraweb@gmail.com");
+     cordenadas_xy(50,19);
+     printf("Javier Gustavo Garcia");
+     cordenadas_xy(50,20);
+     printf("MAIL: javyergarcia1987@gmail.com");
+     cordenadas_xy(50,26);
+     printf("Para Volver al menu presione enter");
+     system("pause>nul");
+     system("cls");
+}
+void ayudaPrincipal(){
+
+     generadorDeMarcos(0,0,118,29);
+     generadorDeMarcos(1,1,117,3);
+     generadorDeMarcos(1,4,117,27);
+
+     cordenadas_xy(50,2);
+     printf("Ayuda de Menu Principal");
+     cordenadas_xy(2,5);
+     printf("Utilice el cursor del teckado ARRIBA O ABAJO para navegar por el menu, para seleccionar la opcion presione ENTER.");
+     cordenadas_xy(10,8);
+     printf("MENU PRINCIPAL| -> SUMAR| -> SUMAR ENTEROS -> CALCULADORA");
+     cordenadas_xy(10,9);
+     printf("              |         | -> SUMAR DECIMALES -> CALCULADORA");
+     cordenadas_xy(10,10);
+     printf("              | --> RESTAR | ---> RESTAR ENTEROS -> CALCULADORA ");
+     cordenadas_xy(10,11);
+     printf("              |           | ----> RESTAR DECIMALES -> CALCULADORA ");
+     cordenadas_xy(10,12);
+     printf("              | ---> MULTIPLICA| -----> MULTIPLICA ENTEROS -> CALCULADORA");
+     cordenadas_xy(10,13);
+     printf("              |                |------> MULTIPLICA DECIMALES -> CALCULADORA");
+     cordenadas_xy(10,14);
+     printf("              | ----> DIVISION  | ---------> DIVICION ENTEROS --> CALCULADORA");
+     cordenadas_xy(10,15);
+     printf("              |                 | ---------> DIVICION DECIMALES -> CALCULADORA");
+     cordenadas_xy(10,16);
+     printf("              | ----  -> FACTORIAL| -------------> FACTORIAL ENTEROS -> CALCULADORA");
+     cordenadas_xy(10,17);
+     printf("              |                   | -------------> FACTORIAL DECIMALES -> CALCULADORA");
+     cordenadas_xy(10,18);
+     printf("              | -> TODOS LOS CALCULOS| -------------> CALCULOS ENTEROS -> CALCULADORA");
+     cordenadas_xy(10,19);
+     printf("              |                      | -------------> CALCULOS DECIMALES -> CALCULADORA");
+     cordenadas_xy(10,20);
+     printf("              | -> CONFIGURACION | --------------------> CAMBIAR TEMA -----> LISTA DE TEMAS");
+     cordenadas_xy(10,21);
+     printf("              |                  | --------------> CAMBIAR COLOR DE TEXTO ----> LISTA DE COLORES");
+     cordenadas_xy(10,22);
+     printf("              |                  | ---------------------------------------------> AYUDA DEL MENU");
+     cordenadas_xy(10,23);
+     printf("              |                  | -------------------------------------> ATRAS -> VUELVA A MENU PRINCIPAL");
+     cordenadas_xy(10,24);
+     printf("              | ----------------> AYUDA ----------> ARBOL DE MENUS");
+     cordenadas_xy(10,25);
+     printf("              | ----------------> ACERCA DE ------> DATOS DELA PROGRAMA Y SUS CREADORES ");;
+     cordenadas_xy(10,26);
+     printf("              | ----------------> SALIR| ---------> SALIR DEL PROGRAMA");
+     cordenadas_xy(45,28);
+     printf("Para Volver al menu presione enter");
+     system("pause>nul");
+     system("cls");
+}
+
 void ayudaConfiguracion(){
-
-    printf("Aca va el texto de ayuda para configuracion");
-    printf("\nPara Volver al menu presione enter");
+    generadorDeMarcos(0,0,118,28);
+    generadorDeMarcos(1,1,117,5);
+    generadorDeMarcos(1,6,117,22);
+    generadorDeMarcos(1,23,117,28);
+    cordenadas_xy(45,3);
+    printf("Ayuda pAra Configuracion ");
+    cordenadas_xy(35,8);
+    printf("Para poder cambiear la comobinacion de coloresde fondo:");
+    cordenadas_xy(30,10);
+    printf("PREIMERO:Ingresar en la opcion Cambio de color de fondo.");
+    cordenadas_xy(30,11);
+    printf("Segundo: desplazarse por el menu con  flecha ARRIBA O ABAJO.");
+    cordenadas_xy(30,12);
+    printf("Tercero: Presione la teccla ENTER para efectuar el cambio.");
+    cordenadas_xy(30,13);
+    printf("Cuarto: seleccione opcion 4'ATRAS', o presione la tecla ESCAPE.");
+    cordenadas_xy(45,25);
+    printf("Para Volver al menu presione enter");
     system("pause>nul");
     system("cls");
 }
@@ -702,15 +1064,62 @@ void ayudaFactorial(){
 }
 void ayudaColor(){
 
-    printf("Aca va el texto de ayuda para cambio de color");
+    generadorDeMarcos(0,0,118,28);
+    generadorDeMarcos(1,1,117,5);
+    generadorDeMarcos(1,6,117,22);
+    generadorDeMarcos(1,23,117,28);
+    cordenadas_xy(45,3);
+    printf("Ayuda para Cambio de Color");
+    cordenadas_xy(30,8);
+    printf("Seleccione una opccion y presione ENTER para grabar los cambios");
+    cordenadas_xy(30,9);
+    printf("NOTA 1:En la opcion cambio de color de fondo, al cambiar el fondo");
+    cordenadas_xy(30,10);
+    printf("cambiara tambien");
+    cordenadas_xy(30,11);
+    printf("el color del texto con el fin de optimizar la visualizacion.");
+    cordenadas_xy(30,12);
+    printf("En alguna combina sera mejor el contraste que en otra.");
+    cordenadas_xy(30,13);
+    printf("Elija la opcion mas conveniente segun su preferencia");
+    cordenadas_xy(30,14);
+    printf("NOTA 2: Cuando elija cambiar el color del texto, el cambio sera");
+    cordenadas_xy(30,15);
+    printf("solomente sobre el mismo,");
+    cordenadas_xy(30,16);
+    printf("mientras el fondo quedara siendo de color negro en todas las opciones");
+    cordenadas_xy(35,26);
+    printf("Para Volver al menu presione la tecla 'ENTER'");
+    system("pause>nul");
+    system("cls");
+}
+void ayudaCalcularTodos(){
+
+    printf("Aca va el texto de ayuda para calculo total");
     printf("\nPara Volver al menu presione enter");
     system("pause>nul");
     system("cls");
+}
+void generadorDeMarcos(int x1,int y1,int x2,int y2){
+ int i;
+    for (i=x1;i<x2;i++){
+		cordenadas_xy(i,y1); printf("\304"); //linea horizontal superior
+		cordenadas_xy(i,y2); printf("\304"); //linea horizontal inferior
+    }
+    for (i=y1;i<y2;i++){
+		cordenadas_xy(x1,i); printf("\263"); //linea vertical izquierda
+		cordenadas_xy(x2,i); printf("\263"); //linea vertical derecha
+	}
+    cordenadas_xy(x1,y1); printf("\332");
+    cordenadas_xy(x1,y2); printf("\300");
+    cordenadas_xy(x2,y1); printf("\277");
+    cordenadas_xy(x2,y2); printf("\331");
 }
 int menu(char titulo[], char *opciones[], int NumOpciones){
  #define ARRIBA 72
  #define ABAJO 80
  #define ENTER 13
+ #define ESCAPE 27
 
    int seleccion = 1;  // Indica la seleccion
    int cursor;
@@ -719,21 +1128,18 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
    do {
       SetConsoleTitle("Calculadora TP1 Grupo Numero 11");
       system("mode con: cols=120 lines=30");
-      cordenadas_xy(40, 7 + seleccion);
+      cordenadas_xy(42, 7 + seleccion);
       printf("==>");
       // Imprime el título del menú
-
-      cordenadas_xy(43,2);
+      generadorDeMarcos(0,0,118,28);
+      generadorDeMarcos(1,1,117,5);
+      generadorDeMarcos(1,6,117,20);
+      generadorDeMarcos(1,21,117,27);
+      cordenadas_xy(45,3);
       printf("%s",titulo);
-      cordenadas_xy(0,4);
-      printf("========================================================================================================================");
-      cordenadas_xy(0,20);
-      printf("________________________________________________________________________________________________________________________");
-      cordenadas_xy(15,22);
+      cordenadas_xy(15,23);
       printf("Utilice 'FLECHA ARRIBA' o'FLECHA ABAJO' para desplazarse y ENTER para seleccionar");
-      cordenadas_xy(0,23);
-      printf("________________________________________________________________________________________________________________________");
-      cordenadas_xy(14,25);
+      cordenadas_xy(14,24);
       printf("\n\t\tSI PRESIONA CUALQUIER OTRA TECLA DEBERA PRESIONAR LA TECLA ENTER PARA VOLVER AL MENU");
 
       int i = 0;
@@ -750,7 +1156,7 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
         cursor=getch();
         system("cls");
         cordenadas_xy(50, 15);
-      } while (cursor != ARRIBA && cursor != ABAJO && cursor != ENTER);
+      } while (cursor != ARRIBA && cursor != ABAJO && cursor != ENTER && cursor != ESCAPE);
       switch (cursor) {
          case ARRIBA:   // En caso que se presione ARRIBA
             seleccion--;
@@ -765,7 +1171,11 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
             }
 
             break;
-
+         break;
+         case ESCAPE:
+             seleccion=NumOpciones;
+             busqueda=0;
+            break;
          case ENTER:
             busqueda = 0;
             break;
@@ -788,7 +1198,7 @@ int sumar(int a, int b){
     total=a+b;
     return total;
 }
-float sumardecimeles(float a, float b){
+float sumardecimales(float a, float b){
     float total;
     total=a+b;
     return total;
@@ -798,7 +1208,7 @@ int restar(int a, int b){
     total=a-b;
     return total;
 }
-float restardecimeles(float a,float b){
+float restardecimales(float a,float b){
     float total;
     total=a-b;
     return total;
@@ -824,7 +1234,7 @@ float dividirdecimales(float a, float b){
     return total;
 }
 int factorial(int n){
-   int resp;
+   long long int resp;
         if(n==1)
             return 1;
             resp=n* factorial(n-1);
@@ -837,3 +1247,4 @@ float factorialdecimal(float n){
             resp=n* factorial(n-1);
         return (resp);
 }
+
