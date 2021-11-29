@@ -9,7 +9,7 @@
 void menuPrincipal();
 void menuSuma();
 void menuResta();
-void menuMultiplicacion(); //menu principal
+void menuMultiplicacion(); /**menu principal*/
 void menuDivision();
 void menuFactorial();
 void menuCalcularTodos();
@@ -17,25 +17,23 @@ void menuConfiguracion();
 void ayudaPrincipal();
 void acerca_de();
 
-int opcionSumaEnteros(); //submenu suma
+int opcionSumaEnteros(); /**submenu suma*/
 float opcionSumaDecimales();
 
-int opcionRestaEnteros();//submenu resta
+int opcionRestaEnteros();/**submenu resta*/
 float opcionRestaDecimales();
 
-int opcionMultiplicacionEnteros();//submenu multiplicacion
+int opcionMultiplicacionEnteros();/**submenu multiplicacion*/
 float opcionMultiplicacionDecimales();
 
-int opcionDivisionEnteros();//submenu division
+int opcionDivisionEnteros();/**submenu division*/
 float opcionDivisionDecimales();
 
 int opcionFactorialEnteros();
-float opcionFactorialDecimales();
+float opcionFactorialDecimales();/**sub menu operacion factorial*/
 
-//void modificaAspecto();
 void modificaColorFondo();
-void modificaColorTexto();
-//void modificaCuadroDeVentana(); /**sub menu configuracion*/
+void modificaColorTexto();/**sub menu modifacion texto*/
 
 int menu(char titulo[], char *opciones[], int NumOpciones);
 void cordenadas_xy(int x , int y); /**Esta funcion determina las cordenadas de la posicion del caracter*/
