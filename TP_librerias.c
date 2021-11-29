@@ -1,19 +1,3 @@
-#include "TP_librerias.h"2
-int sumar(int a, int b);
-float sumardecimales(float a, float b);
-int restar(int a,int b);
-float restardecimales(float a,float b);
-int multiplicar(int a, int b);
-float multiplicardecimales(float a, float b);
-int dividir(int a, int b);
-float dividirdecimales(float a, float b);
-int factorial(int f);
-float factorialdecimal(float f);
-int calcularTodosEnteros();
-float calcularTodosDecimales();
-void generadorDeMarcos(int x1,int y1,int x2,int y2);
-
-void menuPrincipal(){
 
     int Salir=1;
     int opcion;
@@ -1305,3 +1289,88 @@ float factorialdecimal(float n){
             resp=n* factorial(n-1);
         return (resp);
 }
+
+
+/*
+void ingresoValor();
+{
+
+   int NA;
+   int NB;
+   int numerovalidoA;
+   int numerovalidoB;
+   char numeroA[10];
+   char numeroB[10];
+
+
+
+   do
+    {
+
+        printf("Ingrese un numero entero: ");
+        cordenadas_xy(45,9);
+        printf("Numero A: ");
+        gets(numeroA);
+        NA=validar_numeroA(numeroA);
+        cordenadas_xy(45,10);
+        printf("Numero B: ");
+        gets(numeroB);
+        NB=validar_numeroB(numeroB);
+      if(NA==0||NB==0){
+        printf("Valor no Valido, Ingrese un Numero\n");
+        getch();
+     }
+
+   }while(NA==0||NB==0);
+
+   numerovalidoA=atoi(numeroA);
+   numerovalidoB=atoi(numeroB);
+   printf("\nLos Valores ingresodos son correctos\n");
+   getch();
+   return 1;
+}
+int validar_numeroA(char numeroA[])
+{
+    int i;
+    int PrimerCaracter=0;
+
+        if(strlen(numeroA)==0){
+            return 0;
+        }
+        if(numeroA[0]== '+'||numeroA[0]=='-'){
+            PrimerCaracter=1;
+            if(strlen(numeroA)==1){
+            return 0;
+            }
+        }
+     for(i=PrimerCaracter; i<strlen(numeroA); i++){
+        if(!(isdigit(numeroA[i])))
+        {
+            return 0;
+        }
+     }
+    return 1;
+}
+int validar_numeroB(char numeroB[])
+{
+    int i;
+    int PrimerCaracter=0;
+
+
+        if(strlen(numeroB)== 0){
+            return 0;
+        }
+        if(numeroB[0]== '+'||numeroB[0]=='-'){
+            PrimerCaracter=1;
+            if(strlen(numeroB) == 1){
+            return 0;
+            }
+        }
+     for(i=PrimerCaracter; i<strlen(numeroB); i++){
+        if(!(isdigit(numeroB[i])))
+        {
+            return 0;
+        }
+     }
+    return 1;
+}*/
