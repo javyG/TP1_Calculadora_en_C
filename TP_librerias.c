@@ -12,6 +12,9 @@ float factorialdecimal(float f);
 int calcularTodosEnteros();
 float calcularTodosDecimales();
 void generadorDeMarcos(int x1,int y1,int x2,int y2);
+//void ingresoValor();
+//int validar_numeroA(char numeroA[]);
+//int validar_numeroB(char numeroB[]);
 
 
 void menuPrincipal(){
@@ -251,8 +254,9 @@ void menuFactorial(){
     while(Salir);
 }
 int opcionSumaEnteros(){
-
-  int a,b,r;
+    int a;
+    int b;
+    int r;
         generadorDeMarcos(0,0,118,28);
         generadorDeMarcos(1,1,117,5);
         generadorDeMarcos(1,6,117,21);
@@ -260,16 +264,16 @@ int opcionSumaEnteros(){
         cordenadas_xy(45,3);
         printf("Suma de Enteros ");
         cordenadas_xy(45,8);
-        printf("Ingrese un numero entero: \n");
+        printf("Ingrese un numero entero: ");
         cordenadas_xy(45,9);
-        printf("Numero A:");
+        printf("Numero A: ");
         scanf("%d",&a);
         cordenadas_xy(45,10);
-        printf("Numero B:");
+        printf("Numero B: ");
         scanf("%d",&b);
         r=sumar(a,b);
         cordenadas_xy(45,12);
-        printf("Suma: %d + %d = %d",a,b,r);
+        printf(" %d - %d = %d",a,b,r);
         cordenadas_xy(45,24);
         printf("Para Volver al menu presione enter");
         system("pause>nul");
@@ -314,7 +318,7 @@ int opcionRestaEnteros(){
         cordenadas_xy(45,3);
         printf("Resta de Enteros ");
         cordenadas_xy(45,8);
-        printf("Ingrese un numero entero: \n");
+        printf("Ingrese un numero entero: ");
         cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%d",&a);
@@ -325,7 +329,7 @@ int opcionRestaEnteros(){
         cordenadas_xy(45,12);
         printf(" %d - %d = %d",a,b,r);
         cordenadas_xy(45,24);
-        printf("\nPara Volver al menu presione enter");
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -352,7 +356,7 @@ float opcionRestaDecimales(){
         cordenadas_xy(45,12);
         printf(" %.2f - %.2f = %.2f ",a,b,r);
         cordenadas_xy(45,24);
-        printf("\nPara Volver al menu presione enter");
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -368,7 +372,7 @@ int opcionMultiplicacionEnteros(){
         cordenadas_xy(45,3);
         printf("Multiplicacion de Enteros ");
         cordenadas_xy(45,8);
-        printf("Ingrese un numero entero: \n");
+        printf("Ingrese un numero entero:");
         cordenadas_xy(45,9);
         printf("Numero A: ");
         scanf("%d",&a);
@@ -378,8 +382,9 @@ int opcionMultiplicacionEnteros(){
         r=multiplicar(a,b);
         cordenadas_xy(45,12);
         printf(" %d * %d = %d",a,b,r);
+        fflush(stdin);
         cordenadas_xy(45,24);
-        printf("\nPara Volver al menu presione enter");
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 
@@ -406,7 +411,7 @@ float opcionMultiplicacionDecimales(){
         cordenadas_xy(45,12);
         printf(" %.2f * %.2f = %.2f",a,b,r);
         cordenadas_xy(45,24);
-        printf("\nPara Volver al menu presione enter");
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -475,7 +480,7 @@ do{
             }
 }while(b==0);
         cordenadas_xy(45,24);
-        printf("\nPara Volver al menu presione enter");
+        printf("Para Volver al menu presione enter");
         system("pause>nul");
         system("cls");
 }
@@ -931,7 +936,7 @@ void acerca_de(){
      cordenadas_xy(50,13);
      printf("GRUPO 11 - INTEGRANTES");
      cordenadas_xy(50,14);
-     printf("Eliana Arias");
+     printf("Eliana Martinez");
      cordenadas_xy(50,15);
      printf("MAIL: eli15martinez22@gmail.com");
      cordenadas_xy(50,16);
@@ -1048,16 +1053,43 @@ void ayudaMultiplicacion(){
     system("cls");
 }
 void ayudaDivision(){
-
-    printf("Aca va el texto de ayuda para division");
-    printf("\nPara Volver al menu presione enter");
+    generadorDeMarcos(0,0,118,28);
+    generadorDeMarcos(1,1,117,5);
+    generadorDeMarcos(1,6,117,22);
+    generadorDeMarcos(1,23,117,28);
+    cordenadas_xy(50,3);
+    printf("Ayuda Division");
+    cordenadas_xy(35,8);
+    printf("Para realizar la operacion de divizion,");
+    cordenadas_xy(35,9);
+    printf("Elija denominador distinto a cero.");
+    cordenadas_xy(40,26);
+    printf("Para Volver al menu presione enter");
     system("pause>nul");
     system("cls");
 }
 void ayudaFactorial(){
 
-    printf("Recursividad es el proceso de definir algo en terminos de si mismo El caso mas comun para explicar recursividaes\n el calculo del factorial. Si recordamos la definicion de factorial\n 1 si n=0\n n!= n * (n-1)! si n>0\n Si queremos calcular el factorial de 4 tendremos\n 4!= 4 . 3 . 2 . 1 = 24\n");
-    printf("\nPara Volver al menu presione enter");
+    generadorDeMarcos(0,0,118,28);
+    generadorDeMarcos(1,1,117,5);
+    generadorDeMarcos(1,6,117,22);
+    generadorDeMarcos(1,23,117,28);
+    cordenadas_xy(50,3);
+    printf("Ayuda para Factorial");
+    cordenadas_xy(35,8);
+    printf("Recursividad es el proceso de definir algo en terminos de si mismo");
+    cordenadas_xy(35,9);
+    printf("El caso mas comun para explicar recursividaes el calculo del factorial.");
+    cordenadas_xy(35,10);
+    printf("Si recordamos la definicion de factorial");
+    cordenadas_xy(35,12);
+    printf("1 si n=0 n!= n * (n-1)! si n>0");
+    cordenadas_xy(35,13);
+    printf("Si queremos calcular el factorial de 4 tendremos");
+    cordenadas_xy(35,14);
+    printf("4!= 4 . 3 . 2 . 1 = 24");
+    cordenadas_xy(45,24);
+    printf("Para Volver al menu presione enter");
     system("pause>nul");
     system("cls");
 
@@ -1137,10 +1169,10 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
       generadorDeMarcos(1,21,117,27);
       cordenadas_xy(45,3);
       printf("%s",titulo);
-      cordenadas_xy(15,23);
+      cordenadas_xy(18,23);
       printf("Utilice 'FLECHA ARRIBA' o'FLECHA ABAJO' para desplazarse y ENTER para seleccionar");
-      cordenadas_xy(14,24);
-      printf("\n\t\tSI PRESIONA CUALQUIER OTRA TECLA DEBERA PRESIONAR LA TECLA ENTER PARA VOLVER AL MENU");
+      cordenadas_xy(18,24);
+      printf("SI PRESIONA CUALQUIER OTRA TECLA DEBERA PRESIONAR LA TECLA ENTER PARA VOLVER AL MENU");
 
       int i = 0;
 
@@ -1169,9 +1201,7 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
             if (seleccion > NumOpciones) {
                seleccion = 1;
             }
-
             break;
-         break;
          case ESCAPE:
              seleccion=NumOpciones;
              busqueda=0;
@@ -1247,4 +1277,83 @@ float factorialdecimal(float n){
             resp=n* factorial(n-1);
         return (resp);
 }
+/**
+void ingresoValor(char *numeroA,char *numeroB)
+{
 
+   int NA;
+   int NB;
+   int numerovalidoA;
+   int numerovalidoB;
+   *numeroA=&numerovalidoA;
+   *numeroB=&numerovalidoB;
+
+   do
+   {
+       cordenadas_xy(45,8);
+       printf("INGRESA UN NUMERO ENTERO A: ");
+       gets(numeroA);
+       NA=validar_numeroA(numeroA);
+       cordenadas_xy(45,9);
+       printf("INGRESA UN NUMERO ENTERO B: ");
+       gets(numeroB);
+       NB=validar_numeroB(numeroB);
+       if(NA==0||NB==0){
+       cordenadas_xy(45,18);
+       printf("\nValor no Valido, Ingrese un Numero\n");
+       getch();
+       }
+
+   }while(NA==0||NB==0);
+
+   numerovalidoA=atoi(numeroA);
+   numerovalidoB=atoi(numeroB);
+   printf("\nLos Valores ingresodos son correctos\n");
+   getch();
+   return *numeroA,*numeroB;
+}
+int validar_numeroA(char numeroA[])
+{
+    int i;
+    int PrimerCaracter=0;
+
+        if(strlen(numeroA)==0){
+            return 0;
+        }
+        if(numeroA[0]== '+'||numeroA[0]=='-'){
+            PrimerCaracter=1;
+            if(strlen(numeroA)==1){
+            return 0;
+            }
+        }
+     for(i=PrimerCaracter; i<strlen(numeroA); i++){
+        if(!(isdigit(numeroA[i])))
+        {
+            return 0;
+        }
+     }
+    return 1;
+}
+int validar_numeroB(char numeroB[])
+{
+    int i;
+    int PrimerCaracter=0;
+
+
+        if(strlen(numeroB)== 0){
+            return 0;
+        }
+        if(numeroB[0]== '+'||numeroB[0]=='-'){
+            PrimerCaracter=1;
+            if(strlen(numeroB) == 1){
+            return 0;
+            }
+        }
+     for(i=PrimerCaracter; i<strlen(numeroB); i++){
+        if(!(isdigit(numeroB[i])))
+        {
+            return 0;
+        }
+     }
+    return 1;
+}*/
