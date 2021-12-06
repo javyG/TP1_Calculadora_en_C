@@ -1194,7 +1194,7 @@ int menu(char titulo[], char *opciones[], int NumOpciones){
          printf(" %d - %s",(i + 1),opciones[i]);
       }
 
-      // Solo permite que se ingrese ARRIBA, ABAJO o ENTER
+      // Solo permite que se ingrese ARRIBA, ABAJO, ENTER o ESCAPE.
 
       do {
         cursor=getch();
